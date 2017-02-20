@@ -21,7 +21,7 @@
 6. The specifications are done for all the labs and experiments that are part
    of these labs that are listed in the excel sheet.  You pick a strategy to
    write the specification: either read from the [[https://github.com/vlead/lab-specifications][lab-specifications]] repository
-   or read from the web.
+   or read from the [[http://vlab.co.in][web]] or [[https://github.com/virtual-Labs][github]] or [[data.vlabs.ac.in/labs][data service]]
 
 * Part II
 
