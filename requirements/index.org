@@ -1,0 +1,36 @@
+#+TITLE: Requirements
+#+AUTHOR: VLEAD
+#+DATE: [2017-02-20 Mon]
+#+SETUPFILE: ./org-templates/level-0.org
+#+TAGS: boilerplate(b)
+#+EXCLUDE_TAGS: boilerplate
+#+OPTIONS: ^:nil
+
+* Introduction
+  This document captures the requirements for the realization of this project.
+
+* Part I
+1. experiment specification
+2. lab specification which is a agrregate of experiments
+3. all directory names and file names are in lower case with no spaces(use
+   hyphens)
+4. The experiment and lab specifications are pushed to [[https://github.com/vlead/lab-specifications][lab-specifications]]
+   repository
+5. The specifications checked into [[https://github.com/vlead/lab-specifications][lab-specifications]] repository will adhere to
+   the [[https://github.com/vlead/vlabs-platform/blob/refactoring/src/index.org#experiment-specification][experiment]] and [[https://github.com/vlead/vlabs-platform/blob/refactoring/src/index.org#lab-specification][lab]] formats.
+6. The specifications are done for all the labs and experiments that are part
+   of these labs that are listed in the excel sheet.  You pick a strategy to
+   write the specification: either read from the [[https://github.com/vlead/lab-specifications][lab-specifications]] repository
+   or read from the web.
+
+* Part II
+
+1. LDS reads json files and populates the database.
+2. These specifications are pushed to LDS repository.
+   - Clone the repo
+   - create a branch called =specifications= from the =develop= branch
+   - check out to this branch
+   - create a directory =specifications=
+   - push the new specifications done according to the [[https://github.com/vlead/lab-data-service/blob/data-model/src/design/index.org#specification][spec]] to this branch. 
+
+
