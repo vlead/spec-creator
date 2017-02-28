@@ -19,7 +19,7 @@
 5. The specifications checked into [[https://github.com/vlead/lab-specifications][lab-specifications]] repository will adhere to
    the [[https://github.com/vlead/vlabs-platform/blob/refactoring/src/index.org#experiment-specification][experiment]] and [[https://github.com/vlead/vlabs-platform/blob/refactoring/src/index.org#lab-specification][lab]] formats.
 6. The specifications are done for all the labs and experiments that are part
-   of these labs that are listed in the excel sheet.  You pick a strategy to
+   of these labs that are listed in the [[https://docs.google.com/a/vlabs.ac.in/spreadsheets/d/1Ty7p4Fw6HC5DMrT2zHtoDkIiw8fb1jLl7ooAkI_CKgs/edit?usp=sharing_eil&ts=589b1253][excel sheet]].  You pick a strategy to
    write the specification: either read from the [[https://github.com/vlead/lab-specifications][lab-specifications]] repository
    or read from the [[http://vlab.co.in][web]] or [[https://github.com/virtual-Labs][github]] or [[data.vlabs.ac.in/labs][data service]]
 
