@@ -32,6 +32,6 @@
    - create a branch called =specifications= from the =develop= branch
    - check out to this branch
    - create a directory =specifications=
-   - push the new specifications done according to the [[https://github.com/vlead/lab-data-service/blob/data-model/src/design/index.org#specification][spec]] to this branch. 
+   - push the new specifications done according to the [[https://github.com/vlead/lab-data-service/blob/develop/src/design/index.org#specification][spec]] to this branch. 
 
 
