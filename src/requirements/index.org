@@ -1,7 +1,7 @@
 #+TITLE: Requirements
 #+AUTHOR: VLEAD
 #+DATE: [2017-02-20 Mon]
-#+SETUPFILE: ./org-templates/level-0.org
+#+SETUPFILE: ../org-templates/level-1.org
 #+TAGS: boilerplate(b)
 #+EXCLUDE_TAGS: boilerplate
 #+OPTIONS: ^:nil
@@ -21,7 +21,7 @@
 6. The specifications are done for all the labs and experiments that are part
    of these labs that are listed in the excel sheet.  You pick a strategy to
    write the specification: either read from the [[https://github.com/vlead/lab-specifications][lab-specifications]] repository
-   or read from the [[http://vlab.co.in][web]] or [[https://github.com/virtual-Labs][github]] or [[data.vlabs.ac.in/labs][data service]]
+   or read from the [[http://vlab.co.in][web]] or [[https://github.com/virtual-Labs][github]] or [[https://data.vlabs.ac.in/labs][data service]]
 
 * Part II
 
@@ -32,5 +32,7 @@
    - check out to this branch
    - create a directory =specifications=
    - push the new specifications done according to the [[https://github.com/vlead/lab-data-service/blob/data-model/src/design/index.org#specification][spec]] to this branch. 
+   - Status of the completed Labs can be accessed at [[https://docs.google.com/spreadsheets/d/1Ty7p4Fw6HC5DMrT2zHtoDkIiw8fb1jLl7ooAkI_CKgs/edit?ts=589b1253#gid=309933099][Labs Status]]
+
 
 
