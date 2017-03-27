@@ -34,7 +34,7 @@
    - check out to this branch
    - create a directory =specifications=
    - push the new specifications done according to the [[https://github.com/vlead/lab-data-service/blob/data-model/src/design/index.org#specification][spec]] to this branch. 
-   - Status of the completed Labs can be accessed at [[https://docs.google.com/spreadsheets/d/1Ty7p4Fw6HC5DMrT2zHtoDkIiw8fb1jLl7ooAkI_CKgs/edit?ts=589b1253#gid=309933099][Labs Status]]
+   - Status of the completed Labs can be accessed at [[https://docs.google.com/spreadsheets/d/1i2shzDqtdJfxRM_5OTunNaJL07LJ42h0SKTxrWzf7Mk/edit?ts=58d8fd97#gid=1641122555][Labs Status]]
 
 
 
