@@ -1,0 +1,274 @@
+#+TITLE: The Spec Creator API
+#+AUTHOR: VLEAD
+#+DATE: [2017-03-31 FRI]
+#+SETUPFILE: 
+#+TAGS: 
+#+EXCLUDE_TAGS: 
+#+OPTIONS: ^:nil
+
+* Introduction 
+  This document illustrates building of the Specification Creator API.
+
+  
+* APPLICATION
+    
+** Get the string between two specified block ends
+   Application API to get the string between two points
+
+#+NAME: get_the_string
+#+BEGIN_SRC python
+
+def get_the_string(global_str, str2, pos1, pos2):
+	str2_len = len(str2)
+	middle_str = global_str[ (pos1 + str2_len) :pos2]
+	first_brace = middle_str.find("\"")
+	second_brace = middle_str.find("\"", (first_brace + 1) )
+	return middle_str[ (first_brace + 1) : second_brace]
+            
+#+END_SRC
+
+*** Save the Lab File
+ #+NAME: saveLab()
+ #+BEGIN_SRC python
+
+def saveLab(L_fileName, dest_path): 
+	text = "{\"lab\": {\"id\":  \"%s\",\n\
+	 \"name\": \"%s\",\n\
+	 \"discipline_id\": \"%s\",\n\
+	 \"institute_id\": \"%s\",\n\
+	 \"developers\": [],\n\
+	 \"hosting_info\": %s\
+	 \"integration_level\": %s,\n\
+	 \"assets\": [{\"asset_type\": \"image\", \"path\": \"%s\"},\n\
+	 	    {\"asset_type\": \"video\", \"path\": \"%s\"}],\n\
+	 \"overview\": \"This lab deals with %s\",\n\
+	 \"sections\" : [{\"%sduction\"},\n\
+		       {\"experiments\": [%s]}]\n\
+	}\n}" %( ID1.lower(),  d_name, discipline_id.lower(), institute_id.lower(), host_str, integration_level, assets, assets, d_name, Final_list[0], my_str.lower())
+
+	file_path = dest_path + '/' + L_fileName.lower()
+	with open(file_path, "w") as f:
+		f.writelines(text)
+
+#+END_SRC
+
+
+*** Save the experiment File
+ #+NAME: saveExp()
+ #+BEGIN_SRC python
+
+def saveExp(file_name, Ex_name, sec_str, dest_path): 
+	text = "{\"experiment\": {\"id\":  \"%s\",\n\
+	 	\"name\": \"%s\",\n\
+	 	\"discipline_id\": \"%s\",\n\
+	        \"institute_id\": \"%s\",\n\
+	        \"developers\": [],\n\
+	        \"hosting_info\": %s\
+	        \"integration_level\": %s,\n\
+	        \"assets\": [{\"asset_type\": \"image\", \"path\": \"%s\"},\n\
+	 		   {\"asset_type\": \"video\", \"path\": \"%s\"}],\n\
+	 	\"overview\": \"This experiments deals with %s\",\n\
+	 	\"sections\" : [\"%s\"]\
+		\n\t\t}\n}" %( file_name.lower(),  Ex_name, discipline_id.lower(), institute_id.lower(), host_str, integration_level, assets, assets, Ex_name, sec_str)
+	file_path = dest_path + '/' + "%s.json" %file_name
+	with open(file_path, "w") as f:
+		f.writelines(text)
+
+ #+END_SRC
+
+
+
+*** Read the Lab and Experiment Data file
+ #+NAME: saveLab()
+ #+BEGIN_SRC python
+
+def read_mixed_details ():
+	index = 0
+	mixedContent = open("/home/pulkit/Desktop/VLABS_Docs/ALL_NEW_PSOTED/new_structure_old/amritha-labs/list_of_labs.txt", "r")
+	mixeddat = mixedContent.read()
+	while index < len(mixeddat):
+		index = mixeddat.find("institute", index)
+		if index == -1:
+			break
+		instipos.append(index)
+		index += 10
+	instipos.append(len(mixeddat))
+	insti_ids.append(get_the_string( mixeddat,"institute", instipos[0], instipos[1]))
+	return mixeddat
+
+#+END_SRC
+
+
+
+** Main
+#+NAME: Main-python
+#+BEGIN_SRC python
+
+instipos = []
+insti_ids = []
+institute_id = ""
+place = 0
+host_count = 0
+host_plat = ""
+host_str = ""
+discipline_id = ""
+mixeddata = read_mixed_details() 
+
+print ("\n\nWelcome to Specification Creator\n")
+
+directory_old = raw_input("Enter old Path : ")
+directory_new = raw_input("Enter New Path : ")
+
+doc_type = raw_input("Do you want Experiment Spec also ?\nType \"Y\" or \"N\" !!!\n")
+
+print ("Please Wait...\n")
+print ("Processing...........\n")
+
+path = r"%s" %directory_old
+
+path_list = path.split(os.sep)
+calc_len = len(path_list)
+Old_Folder = path_list[calc_len - 1]
+
+for file in os.listdir(path):
+	current_file = os.path.join(path, file)
+	myFile = open(current_file, "r")
+	
+	if file.endswith(".json"):
+		new_path = directory_new + "/%s" %Old_Folder.lower() + "/%s" % file[0 : len(file) - 5].lower()
+		os.makedirs(new_path)
+
+	contents = myFile.read()
+	index = 0
+	startpos = 0
+	listIdPos = []
+	Final_list = []
+	def_str = "\"id\":"
+	my_str = ""
+
+	def_str_exp = "\"name\":"
+	ident_org = "\"org\""
+	# Details for LAB file
+	#if doc_type == "Lab":
+	while index < len(contents):
+		index = contents.find(def_str, index)
+		if index == -1:
+			break
+		listIdPos.append(index)
+		index += 5
+
+	listIdPos.append(len(contents))
+
+	id_count = len(listIdPos)
+	pos_dname = contents.find("\"display_name\":")
+
+
+	#if insti_ids[0] == institute_id.lower():
+	#	institute_id = get_the_string(mixeddata, "insti_id", mixeddata.find("insti_id"), mixeddata.find("insti_id")+20)
+
+
+	ID1 = get_the_string(contents, def_str, listIdPos[0], pos_dname)
+	d_name = get_the_string(contents, "\"display_name\":", pos_dname, listIdPos[1])
+
+	institute_id = get_the_string(contents, ident_org, contents.find(ident_org), contents.find(def_str) )
+	
+	index = 0
+	while index < len(mixeddata):
+		index = mixeddata.lower().find(d_name.lower(), index)
+		if index == -1:
+			break
+		place = index
+		index += len(d_name)
+
+	if place == 0:
+		discipline_id = ""
+		integration_level = ""
+		assets = ""
+		host_count = 0
+		host_plat = ""
+		host_str = ""
+	else:
+		startpos = place + len(d_name)
+		endingpos = startpos + mixeddata.find("hosting_places", startpos)
+		discipline_id = get_the_string(mixeddata, "lid:", startpos , endingpos)
+		host_count = get_the_string(mixeddata, "hosting_places", mixeddata.find("hosting_places:", startpos), mixeddata.find("hosting_platform:", startpos))
+		if host_count == "1":
+			host_plat = get_the_string(mixeddata, "hosting_platform", mixeddata.find("hosting_platform:", startpos), mixeddata.find("hosting_url:", startpos))
+			hosted_url = get_the_string(mixeddata, "hosting_url:", mixeddata.find("hosting_url:", startpos), mixeddata.find("integration", startpos))
+			host_str = "[{\"hosting_status\": \"hosted\", \"hosted_on\": \"%s\", \"hosted_url\": \"%s\"}],\n" %(host_plat, hosted_url)
+
+		if host_count == "2":
+			#host_plat = get_the_string(mixeddata, "hosting_platform", mixeddata.find("hosting_platform:", startpos), mixeddata.find("hosting_url:", startpos))
+			#testplat1 = get_the_string(host_plat, "", host_plat.find("cloud"), host_plat.find(","))
+			#testplat2 = get_the_string(host_plat, "", host_plat.find("openedx"), len(host_plat))
+			testplat1 = "cloud"
+			testplat2 = "openedx"
+			hosted_url = get_the_string(mixeddata, "hosting_url:", mixeddata.find("hosting_url:", startpos), mixeddata.find("integration", startpos))
+			
+			host_str = "[{\"hosting_status\": \"hosted\", \"hosted_on\": \"%s\", \"hosted_url\": \"%s\"},\n\
+			 {\"hosting_status\": \"hosted\", \"hosted_on\": \"%s\", \"hosted_url\": \"%s\"}],\n" %(testplat1, hosted_url, testplat2, hosted_url)
+			
+		
+		integration_level = get_the_string(mixeddata, "intergration", mixeddata.find("integration", startpos), mixeddata.find("assets", startpos))
+		assets = get_the_string(mixeddata, "assets:", mixeddata.find("assets:", startpos), mixeddata.find("institute", startpos))
+		place = 0
+		startpos = 0
+
+	for i in range(1, (id_count-1) ):
+		Final_list.append(get_the_string(contents, def_str, listIdPos[i], listIdPos[i+1]))
+		
+	final_len = len(Final_list)
+	for j in range(1, final_len):
+		my_str += "\""
+		my_str += Final_list[j]
+		my_str += "\"" 
+		if j < final_len - 1:
+			my_str += ", " 
+	saveLab(file, new_path)
+	Final_list.pop(0)
+
+	# Details for Experiment File
+	if doc_type == "Y":
+		All_ID_location = []
+		name_pos = []
+		sub_sections = []
+		index = 0
+		Exp_str = ""
+		for i in range ( 0, len(Final_list)):
+			index = contents.find(Final_list[i])
+			All_ID_location.append(index)
+
+		All_ID_location.append(len(contents))
+		
+
+		for i in range ( 0, len(All_ID_location)-1 ):
+			mid_str = contents[All_ID_location[i] : All_ID_location[i+1]]
+			index = 0
+			del name_pos[:]
+			while index < len(mid_str):
+				index = mid_str.find(def_str_exp, index)
+				if index == -1:
+					break
+				name_pos.append(index)
+				index += 6
+			name_pos.append(len(mid_str))	
+			for j in range (0, len(name_pos)-1 ):
+				first_brace = mid_str.find("\"", (name_pos[j]+6) )
+				second_brace = mid_str.find("\"", (first_brace + 1) )
+				sub_sections.append(mid_str[ (first_brace + 1) : second_brace])
+
+			Ex_final_len = len(sub_sections)
+			for k in range(1, Ex_final_len ):
+				Exp_str += sub_sections[k]
+				if k < Ex_final_len - 1:
+					Exp_str += "\", \n \t\t\t      \"" 	
+			saveExp(Final_list[i].lower(), sub_sections[0], Exp_str, new_path)
+			
+			Exp_str = ""
+			del sub_sections[:]		
+
+print ("Processing Complete, Please Check at your Save Location")
+print ("Thank You, Visit Us again :) ...")
+
+#+END_SRC
+   
