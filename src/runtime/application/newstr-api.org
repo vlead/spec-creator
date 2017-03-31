@@ -13,7 +13,7 @@
 * APPLICATION
     
 ** Get the string between two specified block ends
-   Application API to get the string between two points
+*** Application API to get the string between two points
 
 #+NAME: get_the_string
 #+BEGIN_SRC python
@@ -27,7 +27,9 @@ def get_the_string(global_str, str2, pos1, pos2):
             
 #+END_SRC
 
-*** Save the Lab File
+** Save the Lab File
+
+*** Function will save the Lab file containing all the data required as per the Existing Old Json files and the new details 
  #+NAME: saveLab()
  #+BEGIN_SRC python
 
@@ -53,7 +55,9 @@ def saveLab(L_fileName, dest_path):
 #+END_SRC
 
 
-*** Save the experiment File
+** Save the Experiment File
+
+*** Function will save the Experiment file containing all the data required as per the Existing Old Json files and the new details 
  #+NAME: saveExp()
  #+BEGIN_SRC python
 
@@ -78,7 +82,8 @@ def saveExp(file_name, Ex_name, sec_str, dest_path):
 
 
 
-*** Read the Lab and Experiment Data file
+** Read the Lab and Experiment Data file
+*** Read the Data file which contain all the new data to be added in the created files such as Hosted Info, discipline ID's,  Assets info, etc
  #+NAME: saveLab()
  #+BEGIN_SRC python
 
@@ -101,6 +106,7 @@ def read_mixed_details ():
 
 
 ** Main
+*** This is the main body of the code (API)
 #+NAME: Main-python
 #+BEGIN_SRC python
 
