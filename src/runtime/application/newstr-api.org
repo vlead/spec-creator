@@ -1,10 +1,11 @@
 #+TITLE: The Spec Creator API
 #+AUTHOR: VLEAD
 #+DATE: [2017-03-31 FRI]
-#+SETUPFILE: 
-#+TAGS: 
-#+EXCLUDE_TAGS: 
+#+SETUPFILE: ../org-templates/level-1.org
+#+TAGS: boilerplate(b)
+#+EXCLUDE_TAGS: boilerplate
 #+OPTIONS: ^:nil
+
 
 * Introduction 
   This document illustrates building of the Specification Creator API.
@@ -89,7 +90,7 @@ def saveExp(file_name, Ex_name, sec_str, dest_path):
 
 def read_mixed_details ():
 	index = 0
-	mixedContent = open("/home/pulkit/Desktop/VLABS_Docs/ALL_NEW_PSOTED/new_structure_old/amritha-labs/list_of_labs.txt", "r")
+	mixedContent = open(data_file_path, "r")
 	mixeddat = mixedContent.read()
 	while index < len(mixeddat):
 		index = mixeddat.find("institute", index)
@@ -118,12 +119,15 @@ host_count = 0
 host_plat = ""
 host_str = ""
 discipline_id = ""
-mixeddata = read_mixed_details() 
 
 print ("\n\nWelcome to Specification Creator\n")
 
-directory_old = raw_input("Enter old Path : ")
-directory_new = raw_input("Enter New Path : ")
+data_file_path = raw_input("Enter Data file Path : ")
+
+mixeddata = read_mixed_details() 
+
+directory_old = raw_input("Enter old Folder Path : ")
+directory_new = raw_input("Enter New Folder Path : ")
 
 doc_type = raw_input("Do you want Experiment Spec also ?\nType \"Y\" or \"N\" !!!\n")
 
