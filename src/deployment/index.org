@@ -1,0 +1,29 @@
+#+TITLE: Running Specification Creator
+#+Author: Pulkit
+#+Date: [2017-03-31 Fri]
+#+PROPERTY: results output
+#+PROPERTY: exports code
+#+SETUPFILE: ./org-templates/level-0.org
+#+options: ^:nil
+
+* Setting up Dependencies
+  - Install Python environment ver 2.7
+  - Emacs editor can be used to make changes in the code
+
+* Creation of Lab and Experiments Database file
+  - For running the code successfully, we need a database file which will contain the details of the labs. The details can include Discipline ID, Hosting infos, Hosting Url, Integration Level and assets url, from  where the image and video link can be accessed.
+  - A text file is present containing the details of all the labs, and can be found here: [[https://github.com/vlead/lab-data-service/blob/new_structure_specs/src/lab-specs/list-of-labs.txt][list-of-labs]]. 
+
+* Fetching existing Lab files (Old format including experiment details)
+  - All the old existing lab files need to be cloned into your local machine from here: [[https://github.com/vlead/lab-specifications][old-lab-specs]].
+
+* Running the Script
+  - To run the script, we have three input requirements:
+    + A folder containing the existing labs file cloned from the above step.
+    + A text file containing all the additional lab specification details.
+    + A new folder where the user wants to store the newly generated lab and experiment files.
+
+  - Also keep in mind, the institute folder which the user want to modify, must not be present in the newly created empty folder, else the script will show an error while its execution. It will be automatically created with the script. If the folder is already present, then delete it and run the script again.
+
+
+
