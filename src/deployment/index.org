@@ -5,19 +5,21 @@
 #+PROPERTY: exports code
 #+SETUPFILE: ./org-templates/level-0.org
 #+options: ^:nil
+* Introduction
+  - This file includes the explanation of how to run the script to create lab and experiment specification files into a new format from the existing format.
 
-* Setting up Dependencies
+** Setting up Dependencies
   - Install Python environment ver 2.7
   - Emacs editor can be used to make changes in the code
 
-* Creation of Lab and Experiments Database file
+** Creation of Lab and Experiments Database file
   - For running the code successfully, we need a database file which will contain the details of the labs. The details can include Discipline ID, Hosting infos, Hosting Url, Integration Level and assets url, from  where the image and video link can be accessed.
   - A text file is present containing the details of all the labs, and can be found here: [[https://github.com/vlead/lab-data-service/blob/new_structure_specs/src/lab-specs/list-of-labs.txt][list-of-labs]]. 
 
-* Fetching existing Lab files (Old format including experiment details)
+** Fetching existing Lab files (Old format including experiment details)
   - All the old existing lab files need to be cloned into your local machine from here: [[https://github.com/vlead/lab-specifications][old-lab-specs]].
 
-* Running the Script
+** Running the Script
   - To run the script, we have three input requirements:
     + A folder containing the existing labs file cloned from the above step.
     + A text file containing all the additional lab specification details.
