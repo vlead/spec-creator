@@ -32,39 +32,58 @@
    - After installing and cloning all the necessary files, you need to run
      script as the below mentioned steps explains:
      + Change mode of the python script into executable mode by typing :
-       chmod +x file-name.py
 
-     + Run the script : ./file-name.py
-    
-     + A message will appear stating : \\
-       Welcome to Specification Creator \\
-       Enter Data file path : 
+       #+BEGIN_EXAMPLE
+       chmod +x file-name.py
+       #+END_EXAMPLE
+
+     * Run the script : 
+
+       #+BEGIN_EXAMPLE
+       ./file-name.py
+       #+END_EXAMPLE
+       
+     + A message will appear stating : 
+
+       #+BEGIN_EXAMPLE
+       Welcome to Specification Creator 
+       Enter Data file path :
+       #+END_EXAMPLE
+        
 
      + Here you have to enter the path of the text file which contains details
        of labs as downloaded in step 2 from the link : [[https://github.com/vlead/lab-data-service/blob/new_structure_specs/src/lab-specs/list-of-labs.txt][list-of-labs]].
      
      + After entering the path for the file, you will be asked for the Old
-       folder link and will get a message like : 
-       Enter old Folder Path : 
-       
+       folder link and will get a message :
+
+       #+BEGIN_EXAMPLE
+       Enter old Folder Path :
+       #+END_EXAMPLE
+
      + Get the path entered for the folder which contains all the existing
-       files cloned in step 3.
-       Make sure to enter the folder path institute wise, for e.g. for amrita university, you have to give path for amrita
-       university as a whole and not for its individual labs 
-       After you will enter the path, you will get a
-       message like :
+       files cloned in step 3.  Make sure to enter the folder path institute
+       wise, for e.g. for amrita university, you have to give path for amrita
+       university as a whole and not for its individual labs After you will
+       enter the path, you will get a message:
+
+       #+BEGIN_EXAMPLE
        Enter New Folder Path :
-     
+       #+END_EXAMPLE
+
      + Now you have to give the path of the new folder where you want to keep
        your newly created lab and experiment files.
 
      + Now you will be asked, whether you want only the labs specs or
-       Experiment specs also. You will get a message like :
+       Experiment specs also. You will get a message :
+       
+       #+BEGIN_EXAMPLE
        Do you want Experiment Spec also ? 
        Type "Y" or "N" !!!
+       #+END_EXAMPLE
 
      + Enter the choice as required and you will get a message for successful
-       completion of the conversion. 
+       completion of the conversion.
 
      + You can the find the converted files at the defined new folder path/
 
