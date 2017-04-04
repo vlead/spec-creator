@@ -1,10 +1,11 @@
 #+TITLE: The Application API
 #+AUTHOR: VLEAD
 #+DATE: [2017-02-23 Wed]
-#+SETUPFILE: 
-#+TAGS: 
-#+EXCLUDE_TAGS: 
+#+SETUPFILE: ../org-templates/level-1.org
+#+TAGS: boilerplate(b)
+#+EXCLUDE_TAGS: boilerplate
 #+OPTIONS: ^:nil
+
 
 * Introduction 
   This document illustrates building of the APPLICATION API.
