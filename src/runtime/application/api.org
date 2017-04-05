@@ -13,8 +13,9 @@
   
 * APPLICATION
     
-** Get the string between two specified block ends
-   Application API to get the string between two points
+*** Get the string between two specified block ends
+   - This function will give the string between the two indexes passed into
+     this function,to get the string between two points
 
 #+NAME: get_the_string
 #+BEGIN_SRC python
@@ -29,7 +30,9 @@ def get_the_string(str2, pos1, pos2):
 #+END_SRC
 
 *** Save the Lab File
- #+NAME: saveLab()
+    - This function will take the input from the user and will save the lab
+     specification file in desired folder specified.
+ #+NAME: saveLab
  #+BEGIN_SRC python
 
 def saveLab(L_fileName, dest_path): 
@@ -46,9 +49,10 @@ def saveLab(L_fileName, dest_path):
 
 #+END_SRC
 
-
 *** Save the experiment File
- #+NAME: saveExp()
+    - This function will take the input from the user and will save the
+      experiment specification file in desired folder specified.
+ #+NAME: saveExp
  #+BEGIN_SRC python
 
 def saveExp(file_name, Ex_name, sec_str, dest_path): 
@@ -63,8 +67,13 @@ def saveExp(file_name, Ex_name, sec_str, dest_path):
 
  #+END_SRC
 
+*** Main
+   - This main function includes script for converting the
+     existing json files into new lab and exp specs.
+   - The script requires two inputs:
+     + Existing json files as per the old format.
+     + A new empty folder, where we need to save the converted files.
 
-** Main
 #+NAME: Main-python
 #+BEGIN_SRC python
 
@@ -177,3 +186,14 @@ print ("Thank You, Visit Us again :) ...")
 #+END_SRC
    
   
+
+* Tangle                                                        :boilerplate:
+
+** sources
+#+BEGIN_SRC python :tangle api.py :eval no :noweb yes
+<<get_the_string>>
+<<saveLab>>
+<<saveExp>>
+<<Main-python>>
+
+#+END_SRC
