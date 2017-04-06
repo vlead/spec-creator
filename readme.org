@@ -1,0 +1,20 @@
+* Specification Creator
+** How to access the Specification creator Directory
+   - The directory contains the details of specification creator having two
+     different version of it:
+     + One with having a script for converting the Existing Lab and Experiment
+       files [[https://github.com/vlead/lab-specifications][link]] into a format with basic details like institute name , experiment
+       ID's etc [[https://github.com/vlead/lab-specifications/tree/new_structure][link]].
+
+     + The other with having a script for converting the Existing Lab and
+       Experiment files [[https://github.com/vlead/lab-specifications][link]] into new format with all the details including Hosting
+       Info, Hosting URL, Integration Level and Assets etc [[https://github.com/vlead/lab-data-service/tree/new_structure_specs/src/lab-specs][link]]. 
+
+** How to run the Application 
+   - To run the script as of Part-1, please follow the instructions given,
+     [[https://github.com/vlead/specification-creator/blob/master/src/deployment/spec-app.org][instructions]].
+   - To run the script as of Part-2, please follow the instructions given,
+     [[https://github.com/vlead/specification-creator/blob/master/src/deployment/index.org][instructions]].
+
+** Requirements
+   - Please find the requirements [[https://github.com/vlead/specification-creator/blob/master/src/requirements/index.org][here]].
